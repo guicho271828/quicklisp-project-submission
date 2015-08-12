@@ -2,6 +2,17 @@
 * Quicklisp-Project-Submission  - Submit a local git repository to github, then make an issue @ github.com/quicklisp/quicklisp-projects/issues
 
 
+Usage: 
+1. =(ql:quickload :quicklisp-project-submission)=.
+2. =cd= to your project repository. Or, set your =*default-pathname-defaults*= to the directory.
+3. =(qps:submit)= !
+
+You will be asked a few information and may hear some complaints, such as:
+
++ =:author= missing
++ =:description= missing or too short
++ =:license= missing
++ Github account username and password. <<--- security comments welcome
 
 ** Dependencies
 

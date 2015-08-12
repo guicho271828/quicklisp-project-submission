@@ -89,7 +89,7 @@ Password: ")
             (assert (asdf:system-description system) nil
                     "Your system lacks a system description. ~%See ~a"
                     +faq+)
-            (assert (> 10 (length (asdf:system-description system))) nil
+            (assert (< 10 (length (asdf:system-description system))) nil
                     "Sorry, please provide a little more descriptive information...")
             (assert (asdf:system-license system) nil
                     "Your system lacks the license. ~%See ~a"
