@@ -10,7 +10,7 @@ Usage:
 2. =cd= to your project repository. Or, set your =*default-pathname-defaults*= to the directory.
 3. =(qps:submit)= !
 
-You will be asked a few information and may hear some complaints, such as:
+You will be asked a few questions and may hear some complaints, such as:
 
 + =:author= missing
 + =:description= missing or too short
@@ -26,9 +26,6 @@ This library is at least tested on implementation listed below:
 Also, it depends on the following libraries:
 
 + cl-github-v3  ::
-
-** Installation
-
 
 ** Author
 
