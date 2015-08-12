@@ -15,7 +15,7 @@
 
 
 (defvar *default-remote* "origin")
-(defvar *quicklisp-project-repo* "quicklisp-dummy/quicklisp-projects")
+(defvar *quicklisp-project-repo* "quicklisp/quicklisp-projects")
 (defvar +faq+ "http://blog.quicklisp.org/2015/01/getting-library-into-quicklisp.html")
 (defvar *name*)
 (defvar *url*)
