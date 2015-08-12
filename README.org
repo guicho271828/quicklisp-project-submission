@@ -1,0 +1,45 @@
+
+* Quicklisp-Project-Submission  - Submit a local git repository to github, then make an issue @ github.com/quicklisp/quicklisp-projects/issues
+
+** Usage
+
+** Dependencies
+
+This library is at least tested on implementation listed below:
+
++ SBCL 1.2.8 on X86-64 Linux  3.13.0-61-generic (author's environment)
+
+Also, it depends on the following libraries:
+
++ cl-github-v3  ::
+    
+
++ cl-dot by Juho Snellman <jsnell@iki.fi> ::
+    Generate Dot Output from Arbitrary Lisp Data
+
++ trivia by Masataro Asai ::
+    NON-optimized pattern matcher compatible with OPTIMA, with extensible optimizer interface and clean codebase
+
++ alexandria by  ::
+    Alexandria is a collection of portable public domain utilities.
+
+
+
+** Installation
+
+
+** Author
+
++ Masataro Asai (guicho2.71828@gmail.com)
+
+* Copyright
+
+Copyright (c) 2015 Masataro Asai (guicho2.71828@gmail.com)
+
+
+* License
+
+Licensed under the LLGPL License.
+
+
+
