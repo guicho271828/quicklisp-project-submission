@@ -6,7 +6,7 @@
 (in-package :cl-user)
 (defpackage quicklisp-project-submission
   (:nicknames :qps)
-  (:use :cl :cl-github :cl-dot :trivia :alexandria)
+  (:use :cl :cl-github)
   (:export
    #:submit))
 (in-package :quicklisp-project-submission)
@@ -104,15 +104,17 @@ Password: ")
 
 (defun ensure-github-repo ()
   (handler-case
-      (match (api-command (format nil "/repos/~a/~a" *username* *name*))
-        ((plist :html-url url)
-         (format *query-io* "~&Identified your Github repository at ~a" url)))
+      (format *query-io* "~&Identified your Github repository at ~a"
+              (getf (api-command (format nil "/repos/~a/~a" *username* *name*))
+                    :html-url))
     (error ()
       (restart-case
           (error "Github Repo ~a/~a does not exists!" *username* *name*)
         (create-repo ()
           :report "Create this repository on github."
-          (create-repository :name *name* :has-issues t)
+          (create-repository :name *name*
+                             :has-issues t
+                             :description (asdf:system-description *system*))
           (format *query-io* "~&Repository successfully created!"))))))
 
 (defun ensure-remote (&optional remote)
@@ -121,19 +123,17 @@ Password: ")
         (setf remote (trim (uiop:run-program "git remote show"
                                              :output :string
                                              :error-output *error-output*)))
-      (UIOP/RUN-PROGRAM:SUBPROCESS-ERROR (c)
-        (match c
-          ((UIOP/RUN-PROGRAM:SUBPROCESS-ERROR :code 128)
-           (restart-case
-               (error "~&The remote of this repository is not set!")
-             (set-remote ()
-               (format *query-io* "~&Remote (default: origin, hit Enter): ")
-               (let ((remote (tread-line "origin")))
-                 (format *query-io* "~&Setting ~a as ~a" *url* remote)
-                 (uiop:run-program (format nil "git remote add ~a ~a; git push --all ~a"
-                                           remote *url* remote)
-                                   :output *standard-output*
-                                   :error-output *error-output*))))))))))
+      (UIOP/RUN-PROGRAM:SUBPROCESS-ERROR ()
+        (restart-case
+            (error "~&The remote of this repository is not set!")
+          (set-remote ()
+            (format *query-io* "~&Remote (default: origin, hit Enter): ")
+            (let ((remote (tread-line "origin")))
+              (format *query-io* "~&Setting ~a as ~a" *url* remote)
+              (uiop:run-program (format nil "git remote add ~a ~a; git push --all ~a"
+                                        remote *url* remote)
+                                :output *standard-output*
+                                :error-output *error-output*))))))))
 
 (defun submit-issue ()
   ;; POST /repos/:owner/:repo/issues

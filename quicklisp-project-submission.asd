@@ -22,7 +22,7 @@
   :author "Masataro Asai"
   :mailto "guicho2.71828@gmail.com"
   :license "LLGPL"
-  :depends-on (:cl-github-v3 :cl-dot :trivia :alexandria :uiop)
+  :depends-on (:cl-github-v3 :uiop)
   :components ((:module "src"
                 :components
                 ((:file "package"))))

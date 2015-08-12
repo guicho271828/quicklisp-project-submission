@@ -24,17 +24,6 @@ Also, it depends on the following libraries:
 
 + cl-github-v3  ::
 
-+ cl-dot by Juho Snellman <jsnell@iki.fi> ::
-    Generate Dot Output from Arbitrary Lisp Data
-
-+ trivia by Masataro Asai ::
-    NON-optimized pattern matcher compatible with OPTIMA, with extensible optimizer interface and clean codebase
-
-+ alexandria by  ::
-    Alexandria is a collection of portable public domain utilities.
-
-
-
 ** Installation
 
 
