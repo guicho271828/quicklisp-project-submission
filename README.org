@@ -1,7 +1,7 @@
 
 * Quicklisp-Project-Submission  - Submit a local git repository to github, then make an issue @ github.com/quicklisp/quicklisp-projects/issues
 
-** Usage
+
 
 ** Dependencies
 
@@ -12,7 +12,6 @@ This library is at least tested on implementation listed below:
 Also, it depends on the following libraries:
 
 + cl-github-v3  ::
-    
 
 + cl-dot by Juho Snellman <jsnell@iki.fi> ::
     Generate Dot Output from Arbitrary Lisp Data
