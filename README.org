@@ -1,5 +1,8 @@
 
-* Quicklisp-Project-Submission  - Submit a local git repository to github, then make an issue @ github.com/quicklisp/quicklisp-projects/issues
+* Quicklisp-Project-Submission
+
+Submit a local git repository to github, then make an issue @
+github.com/quicklisp/quicklisp-projects/issues !
 
 
 Usage: 
